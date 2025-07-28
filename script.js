@@ -1,5 +1,4 @@
 const form = document.getElementById('registerForm');
-const successMsg = document.getElementById('successMsg');
 
 form.addEventListener('submit', async function(e) {
   e.preventDefault();
