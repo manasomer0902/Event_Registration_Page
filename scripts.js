@@ -10,7 +10,7 @@ form.addEventListener('submit', async function(e) {
   const message = document.getElementById('message').value.trim();
 
   try {
-    const response = await fetch("https://event-registration-page-pcw5.onrender.com", {
+    const response = await fetch("https://event-registration-page-pcw5.onrender.com/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
