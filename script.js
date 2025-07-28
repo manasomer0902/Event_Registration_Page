@@ -20,8 +20,7 @@ form.addEventListener('submit', async function(e) {
 
     const result = await response.json();
     if (result.success) {
-      successMsg.classList.remove('hidden');
-      form.reset();
+      window.location.href = "thankyou.html";
     } else {
       alert("Registration failed. Try again.");
     }
