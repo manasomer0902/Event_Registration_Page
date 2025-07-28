@@ -18,17 +18,17 @@
       <li><strong>Date:</strong> 10th August 2025</li>
       <li><strong>Time:</strong> 5 PM – 7 PM IST</li>
       <li><strong>Platform:</strong> Zoom (link will be emailed)</li>
-      <li><strong>Speaker:</strong>Taylor Thomas </li>
+      <li><strong>Speaker:</strong> Taylor Thomas</li>
     </ul>
   </section>
 
   <section class="registration-form">
     <h2>📝 Register Now</h2>
     <form id="registerForm">
-      <input type="text" name="name" placeholder="Your Full Name" required>
-      <input type="email" name="email" placeholder="Your Email Address" required>
-      <input type="tel" name="phone" placeholder="Your Mobile Number" required>
-      <textarea name="message" placeholder="Why do you want to attend?" rows="4" required></textarea>
+      <input type="text" id="name" placeholder="Your Full Name" required>
+      <input type="email" id="email" placeholder="Your Email Address" required>
+      <input type="tel" id="phone" placeholder="Your Mobile Number" required>
+      <textarea id="message" placeholder="Why do you want to attend?" rows="4" required></textarea>
       <button type="submit">Register</button>
     </form>
     <p id="successMsg" class="hidden">✅ Thanks for registering! Check your email soon.</p>
@@ -38,28 +38,6 @@
     <p>© 2025 TechRise. Designed by Manas Omer.</p>
   </footer>
 
-  <script>
-    const form = document.getElementById('registerForm');
-    const successMsg = document.getElementById('successMsg');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Simulate submission (replace with fetch if connecting to backend)
-      successMsg.classList.remove('hidden');
-      form.reset();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
-
-fetch("https://your-render-app.onrender.com/register", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    name,
-    email,
-    phone,
-    message,
-  }),
-});
