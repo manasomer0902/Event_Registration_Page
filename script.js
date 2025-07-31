@@ -3,6 +3,10 @@ const form = document.getElementById('registerForm');
 form.addEventListener('submit', async function(e) {
   e.preventDefault();
 
+  const submitButton = form.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+  submitButton.innerText = "Submitting...";
+
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const phone = document.getElementById('phone').value.trim();
@@ -22,9 +26,13 @@ form.addEventListener('submit', async function(e) {
       window.location.href = "thankyou.html";
     } else {
       alert("Registration failed. Try again.");
+      submitButton.disabled = false;
+      submitButton.innerText = "Register";
     }
   } catch (err) {
     alert("Server error. Please try again later.");
     console.error(err);
+    submitButton.disabled = false;
+    submitButton.innerText = "Register";
   }
 });
